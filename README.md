@@ -1,4 +1,4 @@
-# Nama Proyek Anda
+# wordpres dengan depedecy composer
 ### Deskripsi Singkat
 Proyek ini adalah aplikasi WordPress yang dikembangkan menggunakan Docker Compose dan Composer untuk manajemen plugin.
 

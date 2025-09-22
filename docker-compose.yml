@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: mysql:8.0
@@ -12,7 +10,8 @@ services:
       - db_data:/var/lib/mysql
 
   wordpress:
-    image: wordpress:latest
+    # Arahkan build ke direktori 'wordpress' tempat Dockerfile dan Composer berada
+    build: D:\wordpress-magang\furniture hanvital
     container_name: wordpress-app
     restart: always
     ports:
@@ -23,8 +22,9 @@ services:
       WORDPRESS_DB_PASSWORD: root_password
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - ./wp-content:/var/www/html/wp-content
-
+      # Peta volume 'wp-content' untuk menyinkronkan plugin, tema, dan unggahan
+      - ./wordpress/wp-content:/var/www/html/wp-content
+    
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: pma
